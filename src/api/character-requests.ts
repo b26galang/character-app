@@ -65,8 +65,7 @@ export async function createCharacter(character: CharacterCreation): Promise<Cha
 
 // search character by ID or name
 export async function getCharacterByIdentifier(props: CharacterIdentifier): Promise<Character | null> {
-    const nameToSearch = props.nameToSearch && props.nameToSearch;
-    const idOrNameToSearch = props.idToSearch || nameToSearch;
+    const idOrNameToSearch = props.idToSearch || props.nameToSearch;
     const response = await fetch(`${url}/characters/${idOrNameToSearch}`);
     // if response is not successful return null because no character is being retrieved
     if (!response.ok) {

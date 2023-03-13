@@ -27,7 +27,7 @@ export function CharacterTable() {
                 </thead>
                 <tbody>
                     {characters.map(c =>
-                        <tr>
+                        <tr key={c.id}>
                             <td style={{ width: '10px' }}>
                                 {c.favorite && <img src={require('.././styles/star.png')} alt="star" style={{ height: '13px' }} />}
                             </td>
